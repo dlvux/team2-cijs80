@@ -1,0 +1,31 @@
+.index{
+    display: flex;
+    justify-content: space-between;
+    color:black;
+    margin: auto 30px auto 30px;
+
+}
+.product{
+  margin:20px auto auto 30px;
+  display: block;
+}
+.item{
+    margin: 20px;
+    font-size: 20px;
+}
+p:hover{
+color:rgb(134, 200, 125);
+
+}
+#hide{
+    display:none;
+    
+}
+p:hover+#hide{
+    display:block;
+    color:rgb(98, 105, 111);
+   
+}
+h5{
+    border-width: 10px;
+}

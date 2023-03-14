@@ -1,0 +1,25 @@
+#index{
+    display: flex;
+   justify-content: space-between;
+   background-color: antiquewhite;
+  
+ flex:1;
+}
+h3{
+    color: black;
+   
+}
+img{
+ 
+    width: 100px;
+}
+.header{
+   display:flex;
+   position: fixed;
+   width: 100%;
+   background-color: white;
+   top: 0;
+}
+#item{
+    padding: 10px 
+}

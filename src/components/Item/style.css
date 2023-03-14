@@ -1,0 +1,17 @@
+#product img{
+    display: grid;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    grid-template-columns: 100px 200px auto;
+    grid-template-rows: 60px;
+
+}
+#product h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}

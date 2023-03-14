@@ -5,6 +5,10 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from "./components/Header"
+import Listproduct from "./components/ListProduct";
+import Product from "./components/Product"
+
 
 
 function App() {
@@ -18,7 +22,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         <Routes>
           {/* <Route path="/" element={<Home name={name}/>}/> */}
           <Route path="/sign-in" element={<SignIn setName={setName} users={users}/>}/>
@@ -26,6 +30,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <ToastContainer />
+      <Listproduct></Listproduct>
     </>
   );
 }
