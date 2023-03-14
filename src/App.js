@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./app.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { ToastContainer } from 'react-toastify';
@@ -19,9 +18,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<Home name={name}/>}/>
+          {/* <Route path="/" element={<Home name={name}/>}/> */}
           <Route path="/sign-in" element={<SignIn setName={setName} users={users}/>}/>
           <Route path="/sign-up" element={<SignUp handleAddUser={handleAddUser}/>}/>
         </Routes>
