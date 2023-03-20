@@ -12,13 +12,7 @@ import Product from "./components/Product"
 
 
 function App() {
-  const [name, setName] = useState("")
-  const [users, setUsers] = useState([])
-
-  const handleAddUser = (newUser) => {
-    setUsers([...users, newUser])
-  }
-
+  
   return (
     <>
       <BrowserRouter>
@@ -26,8 +20,8 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={ <Listproduct></Listproduct>}/>
-            <Route path="/sign-in" element={<SignIn setName={setName} users={users}/>}/>
-            <Route path="/sign-up" element={<SignUp handleAddUser={handleAddUser}/>}/>
+            <Route path="/sign-in" element={<SignIn />}/>
+            <Route path="/sign-up" element={<SignUp />}/>
           </Routes>
         </div>
       </BrowserRouter>

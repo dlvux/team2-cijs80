@@ -2,22 +2,28 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
-const SignIn = ({setName, users}) => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+const SignIn = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const navigate = useNavigate()
   
   const onClick = () => {
-    if (!username || !password) return toast.error("Please fill out the fields")
+    if (username.trim() === '' || password.trim() === '') return toast.error("Please fill out the fields")
 
-    const findUser = users.find((el) => el.username === username && el.password === password)
+    const users = JSON.parse(localStorage.getItem('users'))
 
-    if (!findUser) {
-      toast.error("Incorrect information. Try again!")
+    if (!users) {
+      toast.error("No users found!")
       return
     }
 
-    setName(username)
+    const validUser = users.find((user) => user.username === username && user.password === password)
+
+    if (!validUser) {
+      toast.error('Invalid username or password!');
+      return;
+    }
+
     navigate("/")
   }
 
@@ -25,7 +31,9 @@ const SignIn = ({setName, users}) => {
     <div id='sign-in'>
       <h1>Sign In</h1>
       <input type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+      <br />
       <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+      <br />
       <button onClick={onClick}>Sign In</button>
       <h4>Don't have an account yet? <Link to={'/sign-up'}>Sign up now</Link></h4>
     </div>
