@@ -29,8 +29,8 @@ const SignUp = ({handleAddUser}) => {
     <div id='sign-up'>
       <h1>Sign Up</h1>
       <input type="text" placeholder='Username' value={username} onChange={(e) => setPerson({...person, username: e.target.value})}/>
-      <input type="text" placeholder='Password' value={password} onChange={(e) => setPerson({...person, password: e.target.value})}/>
-      <input type="text" placeholder='Confirm password' value={confirmPassword} onChange={(e) => setPerson({...person, confirmPassword: e.target.value})}/>
+      <input type="password" placeholder='Password' value={password} onChange={(e) => setPerson({...person, password: e.target.value})}/>
+      <input type="password" placeholder='Confirm password' value={confirmPassword} onChange={(e) => setPerson({...person, confirmPassword: e.target.value})}/>
       <button onClick={handleClick}>Sign Up</button>
       <h4>Already have an account? <Link to={'/sign-in'}>Sign in now</Link></h4>
     </div>

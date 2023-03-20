@@ -23,14 +23,16 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Routes>
-          {/* <Route path="/" element={<Home name={name}/>}/> */}
-          <Route path="/sign-in" element={<SignIn setName={setName} users={users}/>}/>
-          <Route path="/sign-up" element={<SignUp handleAddUser={handleAddUser}/>}/>
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={ <Listproduct></Listproduct>}/>
+            <Route path="/sign-in" element={<SignIn setName={setName} users={users}/>}/>
+            <Route path="/sign-up" element={<SignUp handleAddUser={handleAddUser}/>}/>
+          </Routes>
+        </div>
       </BrowserRouter>
       <ToastContainer />
-      <Listproduct></Listproduct>
+     
     </>
   );
 }

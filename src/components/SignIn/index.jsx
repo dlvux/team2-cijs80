@@ -25,7 +25,7 @@ const SignIn = ({setName, users}) => {
     <div id='sign-in'>
       <h1>Sign In</h1>
       <input type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
-      <input type="text" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+      <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
       <button onClick={onClick}>Sign In</button>
       <h4>Don't have an account yet? <Link to={'/sign-up'}>Sign up now</Link></h4>
     </div>
