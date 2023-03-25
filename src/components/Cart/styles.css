@@ -1,4 +1,6 @@
-
+.cartDetail {
+    margin: 40px
+}
 
 .cartDetail li {
     list-style-type: none;

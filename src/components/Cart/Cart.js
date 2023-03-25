@@ -32,6 +32,7 @@ const Cart = ({cart}) => {
                     </li>
                 )
             })}
+            <p>----------------------------------</p>
             <p>Total Price</p>    
             {/* rounded number to 2 decimal */}
             <h3>{TotalPrice.toFixed(2)}    </h3>     
