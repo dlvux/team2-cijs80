@@ -1,9 +1,10 @@
 #index{
     display: flex;
    justify-content: space-between;
-   background-color: antiquewhite;
-  
+   background-color: white;
+  align-items: center;
  flex:1;
+ padding: 0 100px;
 }
 h3{
     color: black;
@@ -19,7 +20,13 @@ img{
    width: 100%;
    background-color: white;
    top: 0;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+   padding: 10px 20px;
 }
 #item{
     padding: 10px 
+}
+
+#item a {
+    text-decoration: none;
 }
