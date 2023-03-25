@@ -2,6 +2,15 @@
     margin: 40px
 }
 
+.cartDeTail-item {
+    display: flex;
+}
+
+.cartDeTail-item button {
+    margin-left: 10px;
+    width: 20px;
+}
+
 .cartDetail li {
     list-style-type: none;
 }

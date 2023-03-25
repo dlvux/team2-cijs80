@@ -24,7 +24,7 @@ function App() {
     setTotalItem(totalItem);
   }
   }
-  
+  // handleClick add to Cart
   const handleClick = (title, price) => {
     // check if item is on the Cart
     // if the item is not on the cart, add an item
@@ -43,7 +43,22 @@ function App() {
       return {...prev, [title]: newItem}
     })
     calculateTotalItem(cart);
+  }
 
+  const handlePlusQuantity = (title) => {
+    const quantity = cart[title].quantity + 1;
+    const newItem = {price: cart[title].price, quantity: quantity};
+    setCart(prev => {
+      return {...prev, [title]: newItem}
+    })
+  }
+
+  const handleSubtractQuantity = (title) => {
+    const quantity = cart[title].quantity - 1;
+    const newItem = {price: cart[title].price, quantity: quantity};
+    setCart(prev => {
+      return {...prev, [title]: newItem}
+    })
   }
 
   
@@ -57,7 +72,13 @@ function App() {
 
             <Route path="/sign-in" element={<SignIn />}/>
             <Route path="/sign-up" element={<SignUp />}/>
-            <Route path="/cart" element={<Cart cart={cart}/>}/>            
+            <Route path="/cart" 
+              element={<Cart 
+                cart={cart} 
+                handlePlusQuantity={handlePlusQuantity} 
+                handleSubtractQuantity = {handleSubtractQuantity}
+            
+            />}/>            
           </Routes>
         </div>
       </BrowserRouter>
