@@ -21,7 +21,7 @@ function App() {
     for (let item in cart) {
       let itemQuantity = cart[item].quantity;
       totalItem += itemQuantity;
-    setTotalItem(totalItem);
+    setTotalItem(totalItem) ;
   }
   }
   // handleClick add to Cart
@@ -42,7 +42,7 @@ function App() {
     setCart(prev => {
       return {...prev, [title]: newItem}
     })
-    calculateTotalItem(cart);
+    setTotalItem(prev => prev + 1);
   }
 
   const handlePlusQuantity = (title) => {
