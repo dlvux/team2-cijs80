@@ -1,9 +1,8 @@
 import React from 'react'
 import "./style.css"
-import { useState,useEffect } from 'react'
 import Product from '../Product'
 
-const Listproduct = () => {
+const Listproduct = ({handleClick}) => {
 
   
   return (
@@ -41,8 +40,11 @@ const Listproduct = () => {
           </p>
         </div>
       </div>
+
       <div className='listproduct'>
-      <Product></Product>
+      
+      {/* show all product */}
+      <Product handleClick = {handleClick}/>
       </div>
       
       
