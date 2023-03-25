@@ -21,7 +21,7 @@ const Cart = ({cart}) => {
     }
 
     return (  
-        <div>
+        <div className='cartDetail'>
 
             <h2>Cart</h2>
             
@@ -33,7 +33,8 @@ const Cart = ({cart}) => {
                 )
             })}
             <p>Total Price</p>    
-            <h3>{TotalPrice}    </h3>     
+            {/* rounded number to 2 decimal */}
+            <h3>{TotalPrice.toFixed(2)}    </h3>     
 
         </div>
     );

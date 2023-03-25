@@ -1,3 +1,9 @@
-li {
+
+
+.cartDetail li {
     list-style-type: none;
+}
+
+.cartDetail li :hover {
+    text-decoration: none;
 }
