@@ -12,7 +12,18 @@ import Cart from "./components/Cart/Cart.js"
 
 
 function App() {
-  const [cart, setCart] = useState({})
+  const [cart, setCart] = useState({});
+  const [totalItem, setTotalItem] = useState(0);
+
+  // This fucntion use to calculate total number of Item in cart
+  const calculateTotalItem = (cart) => {
+    let totalItem = 0;
+    for (let item in cart) {
+      let itemQuantity = cart[item].quantity;
+      totalItem += itemQuantity;
+    setTotalItem(totalItem);
+  }
+  }
   
   const handleClick = (title, price) => {
     // check if item is on the Cart
@@ -31,6 +42,7 @@ function App() {
     setCart(prev => {
       return {...prev, [title]: newItem}
     })
+    calculateTotalItem(cart);
 
   }
 
@@ -38,7 +50,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header totalItem={totalItem} />
         <div className="container">
           <Routes>
             <Route path="/" element={ <Listproduct handleClick={handleClick}/>}/>

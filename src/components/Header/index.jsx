@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./style.css"
 
-const Header = () => {
+const Header = ({totalItem}) => {
   return (
     <div className="header">
       <div id="img"><img src= "https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/09/fashion-logo-design.jpg" alt="logo" width="100px" he ></img></div>
@@ -13,8 +13,7 @@ const Header = () => {
         <div id="item"><Link to={"/sign-up"}><h3> Sign up</h3></Link></div>
         <div id='item'>
             <Link to={'/cart'}>
-                <h3>Cart </h3>
-            
+                <h3>Cart <span style={{color: 'red'}}>{totalItem}</span> </h3> 
             </Link>
         </div>
         
