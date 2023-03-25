@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
+import './styles.css'
 
 const SignIn = () => {
   const [username, setUsername] = useState('')
@@ -31,10 +32,14 @@ const SignIn = () => {
     <div id='sign-in'>
       <h1>Sign In</h1>
       <input type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
-      <br />
       <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
-      <br />
-      <button onClick={onClick}>Sign In</button>
+      <a onClick={onClick} class="cta">
+        <span>Sign In</span>
+        <svg width="13px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </a>
       <h4>Don't have an account yet? <Link to={'/sign-up'}>Sign up now</Link></h4>
     </div>
   )
